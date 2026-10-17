@@ -9,7 +9,7 @@ const CONFIG = {
   carouselIntervalMs: 3000,
 
   // Main business contact. International format without + or spaces for WhatsApp.
-  whatsappNumber: "256701983907",
+  whatsappNumber: "256781968634",
   whatsappMessage: "Hello Arie Classic Events, I'd like to discuss a cake or event decoration enquiry.",
 
   // Paste real IDs here when accounts are ready. Leave empty to keep disabled.
