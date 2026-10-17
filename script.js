@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupBackToTop();
   setCurrentYear();
   setupTrackingPlaceholders();
+   setupConversionTracking();
 });
 
 function setupMobileNavigation() {
@@ -191,6 +192,36 @@ function setupWhatsAppCTA() {
     link.rel = "noopener noreferrer";
   });
 }
+
+
+
+function setupConversionTracking() {
+  // Track clicks on all WhatsApp links, including the main CTA.
+  document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      if (typeof window.gtag !== "function") return;
+
+      window.gtag("event", "whatsapp_click", {
+        link_url: link.href,
+        link_text: link.textContent.trim().slice(0, 100)
+      });
+    });
+  });
+
+  // Track clicks on phone-call links.
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      if (typeof window.gtag !== "function") return;
+
+      window.gtag("event", "phone_click", {
+        link_url: link.href,
+        link_text: link.textContent.trim().slice(0, 100)
+      });
+    });
+  });
+}
+  
+
 
 function setupBackToTop() {
   const button = document.querySelector(".back-to-top");
