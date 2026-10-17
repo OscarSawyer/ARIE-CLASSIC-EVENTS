@@ -14,7 +14,7 @@ const CONFIG = {
 
   // Paste real IDs here when accounts are ready. Leave empty to keep disabled.
   analytics: {
-    ga4MeasurementId: "" // Example format: G-XXXXXXXXXX
+    ga4MeasurementId: "G-DC63VK8503" // Example format: G-XXXXXXXXXX
   },
   pixels: {
     metaPixelId: "",     // Meta Events Manager Pixel ID
